@@ -20,7 +20,7 @@ module.exports = (robot) ->
   addResponse = (d) ->
     regexTemplate = '.*\\b' + d.prompt.join('\\b|\\b') + '\\b.*'
     regex = new RegExp regexTemplate, 'i'
-    robot.hear regex, (msg) ->
+    robot.respond regex, (msg) ->
       msg.send msg.random d.response
 
   for d in data
